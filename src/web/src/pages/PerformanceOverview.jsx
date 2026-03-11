@@ -12,6 +12,18 @@ import {
   EmptyState,
 } from '../components/PerformanceShared.jsx';
 
+function getPerformanceScoreLabel(t, grade) {
+  const labelKey = {
+    A: 'overview.scoreLabels.excellent',
+    B: 'overview.scoreLabels.good',
+    C: 'overview.scoreLabels.fair',
+    D: 'overview.scoreLabels.poor',
+    F: 'overview.scoreLabels.needsImprovement',
+  }[grade];
+
+  return labelKey ? t(labelKey) : grade;
+}
+
 export default function PerformanceOverview() {
   const { t } = useTranslation('performance');
   const navigate = useNavigate();
@@ -61,7 +73,11 @@ export default function PerformanceOverview() {
           {score && (
             <div className="bg-surface-800 rounded-xl border border-surface-700 p-6 flex items-center gap-8">
               <div className="flex flex-col items-center gap-1.5 shrink-0">
-                <ScoreGauge score={score.score} grade={score.grade} label={score.label} />
+                <ScoreGauge
+                  score={score.score}
+                  grade={score.grade}
+                  label={getPerformanceScoreLabel(t, score.grade)}
+                />
                 {trend && <TrendBadge direction={trend.direction} delta={trend.delta} />}
               </div>
               <div className="flex-1 space-y-3">

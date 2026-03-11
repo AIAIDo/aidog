@@ -39,6 +39,13 @@
     "toolSuccessRate": "工具成功率",
     "scoreTrend": "评分趋势",
     "last30Days": "最近 30 天",
+    "scoreLabels": {
+      "excellent": "优秀",
+      "good": "良好",
+      "fair": "一般",
+      "poor": "较差",
+      "needsImprovement": "需要优化"
+    },
     "sessionPerformance": "会话性能（按成本排序）",
     "sessionPerformanceByCost": "会话性能（按成本排序）",
     "events": "事件",

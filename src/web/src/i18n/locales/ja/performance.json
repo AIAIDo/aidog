@@ -39,6 +39,13 @@
     "toolSuccessRate": "ツール成功率",
     "scoreTrend": "スコアトレンド",
     "last30Days": "過去30日",
+    "scoreLabels": {
+      "excellent": "優秀",
+      "good": "良好",
+      "fair": "普通",
+      "poor": "不良",
+      "needsImprovement": "改善が必要"
+    },
     "sessionPerformance": "セッションパフォーマンス（コスト順）",
     "sessionPerformanceByCost": "セッションパフォーマンス（コスト順）",
     "events": "イベント",

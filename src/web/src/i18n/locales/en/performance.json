@@ -39,6 +39,13 @@
     "toolSuccessRate": "Tool Success Rate",
     "scoreTrend": "Score Trend",
     "last30Days": "Last 30 days",
+    "scoreLabels": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "fair": "Fair",
+      "poor": "Poor",
+      "needsImprovement": "Needs Improvement"
+    },
     "sessionPerformance": "Session Performance (by cost)",
     "sessionPerformanceByCost": "Session Performance (by cost)",
     "events": "events",

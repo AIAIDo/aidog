@@ -11,6 +11,13 @@
     "exposureRisks": "暴露风险",
     "scoreTrend": "评分趋势",
     "last30Days": "最近 30 天",
+    "scoreLabels": {
+      "safe": "安全",
+      "caution": "注意",
+      "warning": "警告",
+      "danger": "危险",
+      "criticalRisk": "严重危险"
+    },
     "recentFindings": "最近发现"
   },
   "exposure": {

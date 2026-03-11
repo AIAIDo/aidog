@@ -11,6 +11,13 @@
     "exposureRisks": "露出リスク",
     "scoreTrend": "スコアトレンド",
     "last30Days": "過去30日",
+    "scoreLabels": {
+      "safe": "安全",
+      "caution": "注意",
+      "warning": "警告",
+      "danger": "危険",
+      "criticalRisk": "重大な危険"
+    },
     "recentFindings": "最近の検出"
   },
   "exposure": {

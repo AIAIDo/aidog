@@ -11,6 +11,13 @@
     "exposureRisks": "Exposure Risks",
     "scoreTrend": "Score Trend",
     "last30Days": "Last 30 days",
+    "scoreLabels": {
+      "safe": "Safe",
+      "caution": "Caution",
+      "warning": "Warning",
+      "danger": "Danger",
+      "criticalRisk": "Critical Risk"
+    },
     "recentFindings": "Recent Findings"
   },
   "exposure": {
