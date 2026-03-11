@@ -30,7 +30,7 @@ describe('Security Storage', () => {
         filesScanned: 5,
         linesScanned: 1000,
         totalFindings: 2,
-        securityScore: { score: 85, grade: 'B', label: '注意', breakdown: { leakage: 42, exposure: 43 } },
+        securityScore: { score: 85, grade: 'B', label: 'Caution', breakdown: { leakage: 42, exposure: 43 } },
         findings: [
           { ruleId: 'S1', ruleName: '手机号', severity: 'medium', category: 'leakage', filePath: '/test/file.jsonl', lineNumber: 42, maskedSnippet: '138****5678' },
           { ruleId: 'S7', ruleName: 'API Key', severity: 'high', category: 'leakage', filePath: '/test/file.jsonl', lineNumber: 100, maskedSnippet: 'sk-a...ghij' },
@@ -150,7 +150,7 @@ describe('Security Storage', () => {
         scanType: 'exposure',
         scannedAt: Date.now(),
         totalFindings: 1,
-        securityScore: { score: 81, grade: 'B', label: '注意' },
+        securityScore: { score: 81, grade: 'B', label: 'Caution' },
       });
 
       const timeline = storage.getScoreTimeline(7, 'full');
