@@ -11,6 +11,13 @@
     "exposureRisks": "Exposure Risks",
     "scoreTrend": "Score Trend",
     "last30Days": "Last 30 days",
+    "scoreLabels": {
+      "safe": "Safe",
+      "caution": "Caution",
+      "warning": "Warning",
+      "danger": "Danger",
+      "criticalRisk": "Critical Risk"
+    },
     "recentFindings": "Recent Findings"
   },
   "exposure": {
@@ -88,7 +95,7 @@
     "matchTypeRegex": "Regular Expression",
     "matchTypeLiteral": "Literal String",
     "regexPlaceholder": "e.g.:\nsk-[a-zA-Z0-9]{20,}\nmy_secret_\\w+",
-    "literalPlaceholder": "e.g.:\nAKIAIOSFODNN7EXAMPLE\npassword=123456",
+    "literalPlaceholder": "e.g.:\ndemo_access_key_value\npassword=123456",
     "cancel": "Cancel",
     "save": "Save",
     "form": {

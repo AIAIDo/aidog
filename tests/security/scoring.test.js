@@ -124,7 +124,7 @@ describe('SecurityEngine scoring', () => {
       const result = engine.calculateSecurityScore(null, null);
       expect(result.score).toBe(100);
       expect(result.grade).toBe('A');
-      expect(result.label).toBe('安全');
+      expect(result.label).toBe('Safe');
     });
 
     it('should deduct for leakage findings', () => {

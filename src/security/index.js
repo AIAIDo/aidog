@@ -211,7 +211,7 @@ export class SecurityEngine {
     const result = {
       score,
       grade: score >= 90 ? 'A' : score >= 75 ? 'B' : score >= 60 ? 'C' : score >= 40 ? 'D' : 'F',
-      label: score >= 90 ? '安全' : score >= 75 ? '注意' : score >= 60 ? '警告' : score >= 40 ? '危险' : '严重危险',
+      label: score >= 90 ? 'Safe' : score >= 75 ? 'Caution' : score >= 60 ? 'Warning' : score >= 40 ? 'Danger' : 'Critical Risk',
       breakdown: { leakage: leakageScore, exposure: exposureScore },
     };
 

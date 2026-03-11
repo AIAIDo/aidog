@@ -3,6 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useScanData, ScoreGauge, ScoreBar, StatCard, TrendBadge, ScoreSparkline, SeverityBadge } from '../components/SecurityShared.jsx';
 
+function getSecurityScoreLabel(t, grade) {
+  const labelKey = {
+    A: 'overview.scoreLabels.safe',
+    B: 'overview.scoreLabels.caution',
+    C: 'overview.scoreLabels.warning',
+    D: 'overview.scoreLabels.danger',
+    F: 'overview.scoreLabels.criticalRisk',
+  }[grade];
+
+  return labelKey ? t(labelKey) : grade;
+}
+
 export default function SecurityOverview() {
   const { t } = useTranslation('security');
   const navigate = useNavigate();
@@ -63,7 +75,7 @@ export default function SecurityOverview() {
                 <ScoreGauge
                   score={scanResult.securityScore.score}
                   grade={scanResult.securityScore.grade}
-                  label={scanResult.securityScore.label}
+                  label={getSecurityScoreLabel(t, scanResult.securityScore.grade)}
                 />
                 {trend && <TrendBadge direction={trend.direction} delta={trend.delta} />}
               </div>

@@ -11,6 +11,13 @@
     "exposureRisks": "暴露风险",
     "scoreTrend": "评分趋势",
     "last30Days": "最近 30 天",
+    "scoreLabels": {
+      "safe": "安全",
+      "caution": "注意",
+      "warning": "警告",
+      "danger": "危险",
+      "criticalRisk": "严重危险"
+    },
     "recentFindings": "最近发现"
   },
   "exposure": {
@@ -88,7 +95,7 @@
     "matchTypeRegex": "正则表达式",
     "matchTypeLiteral": "固定字符串",
     "regexPlaceholder": "例如:\nsk-[a-zA-Z0-9]{20,}\nmy_secret_\\w+",
-    "literalPlaceholder": "例如:\nAKIAIOSFODNN7EXAMPLE\npassword=123456",
+    "literalPlaceholder": "例如:\ndemo_access_key_value\npassword=123456",
     "cancel": "取消",
     "save": "保存",
     "form": {

@@ -64,7 +64,7 @@ export class RuleEngine {
   }
 
   calculateHealthScore(results, totalTokens, totalWasted, totalSessions = 1) {
-    if (totalTokens === 0) return { score: 100, grade: 'A', label: '优秀', breakdown: { wasteRatio: 40, cacheEfficiency: 20, modelFit: 15, sessionHygiene: 15, toolEfficiency: 10 }, trend: 'stable' };
+    if (totalTokens === 0) return { score: 100, grade: 'A', label: 'Excellent', breakdown: { wasteRatio: 40, cacheEfficiency: 20, modelFit: 15, sessionHygiene: 15, toolEfficiency: 10 }, trend: 'stable' };
 
     const safeTotalSessions = Math.max(1, totalSessions);
     const wasteRatio = Math.min(1, Math.max(0, totalWasted / Math.max(totalTokens, 1)));
@@ -113,7 +113,7 @@ export class RuleEngine {
     return {
       score,
       grade: score >= 90 ? 'A' : score >= 75 ? 'B' : score >= 60 ? 'C' : score >= 40 ? 'D' : 'F',
-      label: score >= 90 ? '优秀' : score >= 75 ? '良好' : score >= 60 ? '一般' : score >= 40 ? '较差' : '需改进',
+      label: score >= 90 ? 'Excellent' : score >= 75 ? 'Good' : score >= 60 ? 'Fair' : score >= 40 ? 'Poor' : 'Needs Improvement',
       breakdown: {
         wasteRatio: Math.round(wasteScore),
         cacheEfficiency: Math.round(cacheScore),

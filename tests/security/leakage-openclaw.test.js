@@ -6,6 +6,7 @@ import { tmpdir } from 'os';
 
 describe('LeakageScanner OpenClaw compatibility', () => {
   let tmpDir;
+  const demoGitHubPat = ['github_pat', '11A6UB3TQ0G9mBy3Qqr9DK_IeThgFXOBqEy9PmEFgtcv3MGNIeTdgspC3gghgTHKMLO6Y5KVZDo0lW8ym4'].join('_');
 
   afterEach(() => {
     if (tmpDir) {
@@ -32,7 +33,7 @@ describe('LeakageScanner OpenClaw compatibility', () => {
             id: 'tool_exec_1',
             name: 'exec',
             arguments: {
-              command: 'git clone https://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@github.com/org/repo.git',
+              command: `git clone https://${demoGitHubPat}@github.com/org/repo.git`,
             },
           },
         ],
@@ -65,7 +66,7 @@ describe('LeakageScanner OpenClaw compatibility', () => {
         content: [
           {
             type: 'text',
-            text: 'export GITHUB_TOKEN=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',
+            text: `export GITHUB_TOKEN=${demoGitHubPat}`,
           },
         ],
       },

@@ -393,7 +393,7 @@ export class PerformanceEngine {
    */
   calculatePerformanceScore(metrics) {
     if (!metrics || !metrics.totalEvents) {
-      return { score: 0, grade: 'N/A', label: '无数据', breakdown: {} };
+      return { score: 0, grade: 'N/A', label: 'No Data', breakdown: {} };
     }
 
     // 1. Cache efficiency (0-25): higher cache hit rate = better
@@ -441,7 +441,7 @@ export class PerformanceEngine {
 
     const score = Math.min(100, cacheScore + tokenScore + toolScore + sessionScore + costScore);
     const grade = score >= 90 ? 'A' : score >= 75 ? 'B' : score >= 60 ? 'C' : score >= 40 ? 'D' : 'F';
-    const label = score >= 90 ? '优秀' : score >= 75 ? '良好' : score >= 60 ? '一般' : score >= 40 ? '较差' : '需要优化';
+    const label = score >= 90 ? 'Excellent' : score >= 75 ? 'Good' : score >= 60 ? 'Fair' : score >= 40 ? 'Poor' : 'Needs Improvement';
 
     return {
       score,

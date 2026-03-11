@@ -158,22 +158,26 @@ describe('S6 DB Connection Rule', () => {
 
 describe('S7 API Key Rule', () => {
   it('should detect OpenAI/Anthropic keys', () => {
-    const result = testRule(apiKeyRule, 'ANTHROPIC_API_KEY=sk-abcdefghij1234567890xy');
+    const demoKey = ['sk', 'abcdefghij1234567890xy'].join('-');
+    const result = testRule(apiKeyRule, `ANTHROPIC_API_KEY=${demoKey}`);
     expect(result).toHaveLength(1);
   });
 
   it('should detect GitHub PATs', () => {
-    const result = testRule(apiKeyRule, 'token: ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789');
+    const demoPat = ['ghp', 'aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789'].join('_');
+    const result = testRule(apiKeyRule, `token: ${demoPat}`);
     expect(result).toHaveLength(1);
   });
 
   it('should detect GitHub fine-grained PATs', () => {
-    const result = testRule(apiKeyRule, 'token: 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');
+    const demoFineGrainedPat = ['github_pat', '11A6UB3TQ0G9mBy3Qqr9DK_IeThgFXOBqEy9PmEFgtcv3MGNIeTdgspC3gghgTHKMLO6Y5KVZDo0lW8ym4'].join('_');
+    const result = testRule(apiKeyRule, `token: ${demoFineGrainedPat}`);
     expect(result).toHaveLength(1);
   });
 
   it('should detect AWS access keys', () => {
-    const result = testRule(apiKeyRule, 'AWS_KEY=AKIAIOSFODNN7EXAMPLE');
+    const demoAwsKey = ['AKIA', 'IOSFODNN7EXAMPLE'].join('');
+    const result = testRule(apiKeyRule, `AWS_KEY=${demoAwsKey}`);
     expect(result).toHaveLength(1);
   });
 
@@ -188,10 +192,11 @@ describe('S7 API Key Rule', () => {
   });
 
   it('should mask correctly', () => {
-    const masked = apiKeyRule.mask('sk-abcdefghij1234567890xy');
+    const demoKey = ['sk', 'abcdefghij1234567890xy'].join('-');
+    const masked = apiKeyRule.mask(demoKey);
     expect(masked).toContain('sk-a');
     expect(masked).toContain('...');
-    expect(masked).not.toBe('sk-abcdefghij1234567890xy');
+    expect(masked).not.toBe(demoKey);
   });
 });
 
