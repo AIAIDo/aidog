@@ -4,7 +4,7 @@
   "description": "OpenClaw agent optimization toolkit for reducing AI coding cost, improving performance, and scanning security risks",
   "type": "module",
   "bin": {
-    "aidog": "./bin/aidog.js"
+    "aidog": "bin/aidog.js"
   },
   "scripts": {
     "dev": "node bin/aidog.js",
@@ -47,6 +47,14 @@
   "files": [
     "bin/",
     "src/",
+    "!src/web/node_modules/",
+    "!src/web/src/",
+    "!src/web/index.html",
+    "!src/web/package.json",
+    "!src/web/package-lock.json",
+    "!src/web/postcss.config.js",
+    "!src/web/tailwind.config.js",
+    "!src/web/vite.config.js",
     "LICENSE",
     "README.md"
   ],

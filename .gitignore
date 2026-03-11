@@ -39,6 +39,9 @@ npm-debug.log*
 docs/plans/
 docs/superpowers/specs/
 
+# npm pack output
+*.tgz
+
 # AI tools
 .claude/
 .superpowers/

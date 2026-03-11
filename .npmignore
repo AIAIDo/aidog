@@ -1,0 +1,22 @@
+# Web frontend - only need dist/
+src/web/node_modules/
+src/web/src/
+src/web/index.html
+src/web/package.json
+src/web/package-lock.json
+src/web/postcss.config.js
+src/web/tailwind.config.js
+src/web/vite.config.js
+
+# Tests
+tests/
+__tests__/
+
+# Dev files
+*.test.js
+*.spec.js
+.github/
+docs/
+scripts/
+plans/
+playwright.config.*
