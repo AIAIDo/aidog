@@ -1,6 +1,6 @@
 {
   "name": "aidog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenClaw agent optimization toolkit for reducing AI coding cost, improving performance, and scanning security risks",
   "type": "module",
   "bin": {
