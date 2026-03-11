@@ -46,7 +46,7 @@ describe('Security Storage', () => {
         scanType: 'exposure',
         scannedAt: Date.now(),
         totalFindings: 0,
-        securityScore: { score: 100, grade: 'A', label: '安全' },
+        securityScore: { score: 100, grade: 'A', label: 'Safe' },
       });
 
       expect(scanId).toBe('sec_test002');
@@ -143,7 +143,7 @@ describe('Security Storage', () => {
         scanType: 'full',
         scannedAt: Date.now() - 5000,
         totalFindings: 0,
-        securityScore: { score: 92, grade: 'A', label: '安全' },
+        securityScore: { score: 92, grade: 'A', label: 'Safe' },
       });
       storage.saveSecurityScan({
         scanId: 'sec_tl_exp',

@@ -140,7 +140,7 @@ app.get('/api/stats', (req, res) => {
     healthScore: {
       score: 72,
       grade: 'B',
-      label: '良好',
+      label: 'Good',
       breakdown: {
         wasteRatio: 28,
         cacheEfficiency: 14,
@@ -237,7 +237,7 @@ app.get('/api/analysis', (req, res) => {
     healthScore: {
       score: 72,
       grade: 'B',
-      label: '良好',
+      label: 'Good',
       breakdown: {
         wasteRatio: 28,
         cacheEfficiency: 14,
@@ -365,7 +365,7 @@ app.post('/api/security/scan/trigger', (req, res) => {
     securityScore: {
       score: 85,
       grade: 'B',
-      label: '良好',
+      label: 'Good',
       breakdown: { leakage: 40, exposure: 45 },
       trend: { direction: 'up', delta: 5, history: [{ date: '2026-03-01', score: 80 }, { date: '2026-03-08', score: 85 }] },
     },
@@ -385,7 +385,7 @@ app.get('/api/security/scan/latest', (req, res) => {
       securityScore: {
         score: 85,
         grade: 'B',
-        label: '良好',
+        label: 'Good',
         breakdown: { leakage: 40, exposure: 45 },
         trend: { direction: 'up', delta: 5, history: [{ date: '2026-03-01', score: 80 }, { date: '2026-03-08', score: 85 }] },
       },
