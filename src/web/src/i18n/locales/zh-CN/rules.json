@@ -1,0 +1,75 @@
+{
+  "loading": "加载中...",
+  "header": {
+    "title": "Token 分析规则",
+    "stats": "共 {{total}} 条规则，已启用 {{enabled}} 条，内置 {{builtin}} 条，自定义 {{custom}} 条",
+    "addCustomRule": "添加自定义规则",
+    "editRule": "编辑规则",
+    "addCustomTokenRule": "添加自定义 Token 分析规则"
+  },
+  "tokenRules": {
+    "title": "Token 分析规则",
+    "ruleStats": "共 {{total}} 条规则，已启用 {{enabled}} 条，内置 {{builtin}} 条，自定义 {{custom}} 条",
+    "addCustomRule": "添加自定义规则",
+    "editRule": "编辑规则",
+    "addCustomTokenRule": "添加自定义 Token 分析规则"
+  },
+  "form": {
+    "name": "名称",
+    "severity": "级别",
+    "description": "说明",
+    "field": "指标字段",
+    "metricField": "指标字段",
+    "aggregation": "聚合方式",
+    "aggregationMax": "最大值 (max)",
+    "aggregationSum": "求和 (sum)",
+    "aggregationAvg": "平均值 (avg)",
+    "aggregationCount": "计数 (count)",
+    "scope": "作用域",
+    "operator": "运算符",
+    "threshold": "阈值",
+    "minEvents": "最少事件数",
+    "cancel": "取消",
+    "save": "保存"
+  },
+  "fieldOptions": {
+    "inputTokens": "Input Tokens",
+    "outputTokens": "Output Tokens",
+    "cacheRead": "Cache Read",
+    "cacheWrite": "Cache Write",
+    "contentLength": "Content Length"
+  },
+  "aggregationOptions": {
+    "max": "最大值 (max)",
+    "sum": "求和 (sum)",
+    "avg": "平均值 (avg)",
+    "count": "计数 (count)"
+  },
+  "scopeOptions": {
+    "session": "Session",
+    "event": "Event"
+  },
+  "table": {
+    "status": "状态",
+    "id": "ID",
+    "name": "名称",
+    "severity": "级别",
+    "type": "类型",
+    "description": "说明",
+    "actions": "操作"
+  },
+  "empty": {
+    "noRules": "暂无规则"
+  },
+  "saveFailed": "保存失败",
+  "confirmDelete": "确定删除规则 \"{{name}}\"?",
+  "ruleCard": {
+    "hits": "命中",
+    "wasted": "浪费",
+    "evidenceItems": "{{count}} 条证据",
+    "turn": "轮次",
+    "tokens": "tokens",
+    "waste": "浪费",
+    "more": "+ {{count}} 条更多"
+  }
+}

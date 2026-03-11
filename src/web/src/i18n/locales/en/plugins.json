@@ -1,0 +1,10 @@
+{
+  "totalPlugins": "Total Plugins",
+  "available": "Available",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "unavailable": "Unavailable",
+  "loadingPlugins": "Loading plugins...",
+  "by": "By {{author}}",
+  "homepage": "Homepage →"
+}

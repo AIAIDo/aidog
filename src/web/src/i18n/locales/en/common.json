@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "tokenOptimization": "Token Optimization",
+    "performanceAnalysis": "Performance Analysis",
+    "securityDetection": "Security Detection",
+    "overview": "Overview",
+    "sessions": "Sessions",
+    "analysis": "Diagnostics",
+    "optimize": "Diagnostics",
+    "tokenRules": "Rule Library",
+    "performanceOverview": "Performance Overview",
+    "agentComparison": "Agent Comparison",
+    "toolAnalysis": "Tool Analysis",
+    "scanOverview": "Scan Overview",
+    "exposureDetection": "Exposure Detection",
+    "leakageScan": "Leakage Scan",
+    "detectionRules": "Detection Rules",
+    "plugins": "Plugins",
+    "settings": "Settings"
+  },
+  "pageTitle": {
+    "/": "Overview",
+    "/sessions": "Sessions",
+    "/plugins": "Plugins",
+    "/settings": "Settings",
+    "/security": "Scan Overview",
+    "/security/exposure": "Exposure Detection",
+    "/security/leakage": "Leakage Scan",
+    "/security/rules": "Detection Rules",
+    "/token-rules": "Rule Library",
+    "/performance": "Performance Overview",
+    "/performance/agents": "Agent Comparison",
+    "/performance/tools": "Tool Analysis",
+    "/diagnostics": "Diagnostics"
+  },
+  "actions": {
+    "refresh": "Refresh",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "clear": "Clear",
+    "go": "Go",
+    "edit": "Edit",
+    "restore": "Restore",
+    "delete": "Delete",
+    "add": "Add",
+    "apply": "Apply",
+    "restoreDefaults": "Restore country defaults"
+  },
+  "status": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "saved": "Settings saved",
+    "analyzing": "Analyzing...",
+    "scanning": "Scanning...",
+    "noData": "No data"
+  },
+  "pagination": {
+    "total": "{{count}} total",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "severity": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "trend": {
+    "improving": "Improving",
+    "declining": "Declining",
+    "stable": "Stable",
+    "comparedToLastWeek": "vs last week",
+    "comparedToPreviousAnalysis": "vs previous analysis"
+  },
+  "ruleType": {
+    "builtIn": "Built-in",
+    "custom": "Custom"
+  },
+  "language": {
+    "en": "English",
+    "zh-CN": "中文",
+    "ja": "日本語"
+  },
+  "time": {
+    "last1Day": "Last 1 day",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days"
+  }
+}

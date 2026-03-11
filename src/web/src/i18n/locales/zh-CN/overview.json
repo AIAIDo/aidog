@@ -1,0 +1,59 @@
+{
+  "header": {
+    "title": "Token 分析概览",
+    "refreshAnalysis": "刷新分析",
+    "analyzing": "分析中...",
+    "loading": "正在加载..."
+  },
+  "breakdown": {
+    "wasteControl": "浪费控制",
+    "cacheEfficiency": "缓存效率",
+    "sessionHygiene": "会话质量",
+    "sessionQuality": "会话质量",
+    "modelFit": "模型匹配",
+    "toolEfficiency": "工具效率"
+  },
+  "stats": {
+    "sessions": "会话数",
+    "tokenUsage": "Token 消耗",
+    "avgScore": "平均评分",
+    "estimatedWaste": "预估浪费"
+  },
+  "chart": {
+    "tokenTrend": "Token 消耗趋势",
+    "last7Days": "最近 7 天",
+    "modelDistribution": "模型分布",
+    "tokens": "tokens"
+  },
+  "section": {
+    "currentSession": "当前会话",
+    "recentSessions": "最近会话",
+    "topWastePatterns": "Top 浪费模式"
+  },
+  "wastePatterns": {
+    "occurrences": "命中 {{count}} 次",
+    "recoverable": "预计可回收",
+    "viewDiagnosis": "查看诊断"
+  },
+  "live": {
+    "noActiveSessions": "无活跃会话",
+    "live": "实时",
+    "turns": "轮次",
+    "tokens": "Token",
+    "rules": "规则"
+  },
+  "grade": {
+    "excellent": "优秀",
+    "good": "良好",
+    "fair": "一般",
+    "poor": "较差",
+    "needsImprovement": "需改进"
+  },
+  "empty": {
+    "noData": "暂无数据",
+    "noSessionRecords": "暂无会话记录",
+    "noSessions": "暂无会话记录",
+    "noWastePatterns": "暂无浪费模式",
+    "noScoreData": "暂无评分数据"
+  }
+}

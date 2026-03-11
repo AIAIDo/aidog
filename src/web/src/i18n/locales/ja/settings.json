@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "aiProvider": "AI プロバイダー",
+    "alerts": "アラート",
+    "securityRules": "セキュリティルール",
+    "analysis": "分析",
+    "storage": "ストレージ"
+  },
+  "provider": {
+    "providers": "プロバイダー",
+    "scanning": "スキャン中...",
+    "providersReady": "{{count}} プロバイダー利用可能",
+    "provider": "プロバイダー",
+    "providerDesc": "自動は最初に利用可能なプロバイダーを使用します",
+    "autoDetect": "自動検出",
+    "model": "モデル",
+    "modelDesc": "最適化分析に使用する AI モデル",
+    "available": "利用可能",
+    "notDetected": "未検出",
+    "selected": "選択中",
+    "clickToConfigure": "クリックして設定",
+    "configuration": "設定",
+    "apiKey": "API キー",
+    "usingAutoDetectedKey": "(自動検出キーを使用中)",
+    "storedLocally": "ローカルに保存のみ",
+    "storedLocallyOnly": "ローカルに保存のみ",
+    "baseUrl": "Base URL",
+    "baseURL": "Base URL",
+    "customModel": "カスタムモデル",
+    "clearManualConfig": "手動設定をクリア",
+    "noProviders": "プロバイダーが検出されませんでした。上のプロバイダーをクリックして手動設定するか、環境変数を設定してください。",
+    "noProvidersDetected": "プロバイダーが検出されませんでした。上のプロバイダーをクリックして手動設定するか、環境変数を設定してください。",
+    "awsBedrock": "AWS Bedrock の認証情報が検出されました（将来の使用に利用可能）",
+    "awsBedrockDetected": "AWS Bedrock の認証情報が検出されました（将来の使用に利用可能）",
+    "local": "ローカル",
+    "manual": "手動",
+    "viaManualConfig": "手動設定",
+    "viaSource": "{{source}} 経由"
+  },
+  "alerts": {
+    "healthScoreThreshold": "ヘルススコア閾値",
+    "healthScoreDesc": "ヘルススコアがこの値を下回った時にアラート",
+    "healthScoreThresholdDesc": "ヘルススコアがこの値を下回った時にアラート"
+  },
+  "security": {
+    "country": "国 / 地域",
+    "countryRegion": "国 / 地域",
+    "countryDesc": "電話番号と ID カードの検出パターンの国を選択",
+    "countryRegionDesc": "電話番号と ID カードの検出パターンの国を選択",
+    "phonePattern": "電話番号パターン",
+    "phoneNumberPattern": "電話番号パターン",
+    "phonePatternDesc": "電話番号検出の正規表現パターン（ルール S1）",
+    "phoneNumberPatternDesc": "電話番号検出の正規表現パターン（ルール S1）",
+    "idCardPattern": "ID カードパターン",
+    "idCardPatternDesc": "ID/SSN 検出の正規表現パターン（ルール S2）",
+    "customized": "カスタマイズ済",
+    "restoreCountryDefaults": "国のデフォルトに戻す"
+  },
+  "analysis": {
+    "interval": "分析間隔",
+    "analysisInterval": "分析間隔",
+    "intervalDesc": "自動分析の実行頻度",
+    "analysisIntervalDesc": "自動分析の実行頻度",
+    "autoAnalyze": "自動分析",
+    "autoAnalyzeDesc": "新しいセッション完了時に自動的に分析を実行",
+    "maxSessionAge": "最大セッション保持期間",
+    "maxSessionAgeDesc": "クリーンアップまでのセッションデータ保持日数"
+  },
+  "storage": {
+    "dataPath": "データパス",
+    "dataPathDesc": "aidog が分析データを保存するディレクトリ"
+  },
+  "saveSettings": "設定を保存",
+  "intervalOptions": {
+    "1min": "1分",
+    "5min": "5分",
+    "10min": "10分",
+    "30min": "30分",
+    "1hour": "1時間"
+  },
+  "retentionOptions": {
+    "7days": "7日",
+    "14days": "14日",
+    "30days": "30日",
+    "60days": "60日",
+    "90days": "90日"
+  }
+}

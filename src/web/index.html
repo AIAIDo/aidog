@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' shape-rendering='crispEdges'%3E%3Crect x='4' y='3' width='4' height='5' fill='%23D97757'/%3E%3Crect x='16' y='3' width='4' height='5' fill='%23D97757'/%3E%3Crect x='5' y='4' width='2' height='2' fill='%23E8A87C'/%3E%3Crect x='17' y='4' width='2' height='2' fill='%23E8A87C'/%3E%3Crect x='3' y='7' width='18' height='14' rx='1' fill='%23D97757'/%3E%3Crect x='5' y='10' width='14' height='9' fill='%23FAE8DE'/%3E%3Crect x='7' y='12' width='2' height='2' fill='%232D1B14'/%3E%3Crect x='15' y='12' width='2' height='2' fill='%232D1B14'/%3E%3Crect x='7' y='12' width='1' height='1' fill='%2367E8F9'/%3E%3Crect x='15' y='12' width='1' height='1' fill='%2367E8F9'/%3E%3Crect x='11' y='15' width='2' height='2' fill='%232D1B14'/%3E%3Crect x='4' y='14' width='2' height='2' fill='%23E8A87C'/%3E%3Crect x='18' y='14' width='2' height='2' fill='%23E8A87C'/%3E%3C/svg%3E" />
+    <title>aidog Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      // Google Fonts 在中国大陆不可用，自动回退到国内镜像
+      (function() {
+        var font = 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap';
+        var mirror = 'https://fonts.loli.net/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap';
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = font;
+        link.onerror = function() { link.href = mirror; };
+        document.head.appendChild(link);
+      })();
+    </script>
+    <style>
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        background: #0f172a;
+      }
+    </style>
+  </head>
+  <body class="bg-surface-900 text-slate-300 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

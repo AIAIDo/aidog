@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "tokenOptimization": "Token 优化",
+    "performanceAnalysis": "性能分析",
+    "securityDetection": "安全检测",
+    "overview": "概览",
+    "sessions": "会话",
+    "analysis": "诊断与优化",
+    "optimize": "诊断与优化",
+    "tokenRules": "规则库",
+    "performanceOverview": "性能概览",
+    "agentComparison": "代理对比",
+    "toolAnalysis": "工具分析",
+    "scanOverview": "扫描概览",
+    "exposureDetection": "暴露检测",
+    "leakageScan": "泄露扫描",
+    "detectionRules": "检测规则",
+    "plugins": "插件",
+    "settings": "设置"
+  },
+  "pageTitle": {
+    "/": "概览",
+    "/sessions": "会话",
+    "/plugins": "插件",
+    "/settings": "设置",
+    "/security": "扫描概览",
+    "/security/exposure": "暴露检测",
+    "/security/leakage": "泄露扫描",
+    "/security/rules": "检测规则",
+    "/token-rules": "规则库",
+    "/performance": "性能概览",
+    "/performance/agents": "代理对比",
+    "/performance/tools": "工具分析",
+    "/diagnostics": "诊断与优化"
+  },
+  "actions": {
+    "refresh": "刷新",
+    "save": "保存",
+    "cancel": "取消",
+    "search": "搜索",
+    "clear": "清除",
+    "go": "执行",
+    "edit": "编辑",
+    "restore": "恢复默认",
+    "delete": "删除",
+    "add": "添加",
+    "apply": "应用",
+    "restoreDefaults": "恢复默认设置"
+  },
+  "status": {
+    "loading": "正在加载...",
+    "saving": "保存中...",
+    "saved": "设置已保存",
+    "analyzing": "分析中...",
+    "scanning": "扫描中...",
+    "noData": "暂无数据"
+  },
+  "pagination": {
+    "total": "共 {{count}} 条",
+    "prev": "上一页",
+    "next": "下一页"
+  },
+  "severity": {
+    "critical": "严重",
+    "high": "高危",
+    "medium": "中危",
+    "low": "低危"
+  },
+  "trend": {
+    "improving": "改善中",
+    "declining": "恶化中",
+    "stable": "稳定",
+    "comparedToLastWeek": "较上周",
+    "comparedToPreviousAnalysis": "较上次分析"
+  },
+  "ruleType": {
+    "builtIn": "内置",
+    "custom": "自定义"
+  },
+  "language": {
+    "en": "English",
+    "zh-CN": "中文",
+    "ja": "日本語"
+  },
+  "time": {
+    "last1Day": "最近 1 天",
+    "last7Days": "最近 7 天",
+    "last30Days": "最近 30 天",
+    "last90Days": "最近 90 天"
+  }
+}

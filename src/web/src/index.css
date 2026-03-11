@@ -1,0 +1,213 @@
+/* ── Theme variables ────────────────────────────────── */
+/* Dark theme (default) */
+:root {
+  --surface-950: #020617;
+  --surface-900: #0f172a;
+  --surface-800: #1e293b;
+  --surface-700: #334155;
+  --surface-600: #475569;
+  --body-bg: #0f172a;
+  --body-text: #cbd5e1;
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748b;
+}
+
+/* Light theme (cool gray) */
+:root.light {
+  --surface-950: #f8fafc;
+  --surface-900: #f1f5f9;
+  --surface-800: #ffffff;
+  --surface-700: #e2e8f0;
+  --surface-600: #cbd5e1;
+  --body-bg: #f1f5f9;
+  --body-text: #1e293b;
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-thumb-hover: #94a3b8;
+}
+
+/* Light theme: remap slate text colors to dark equivalents for readability */
+:root.light .text-slate-100 { color: #0f172a; }
+:root.light .text-slate-200 { color: #1e293b; }
+:root.light .text-slate-300 { color: #334155; }
+:root.light .text-slate-400 { color: #475569; }
+:root.light .text-slate-500 { color: #64748b; }
+:root.light .placeholder-slate-500::placeholder { color: #94a3b8; }
+:root.light .text-slate-600 { color: #475569; }
+:root.light .text-slate-50 { color: #0f172a; }
+:root.light .text-white { color: #0f172a; }
+:root.light .bg-primary-500 .text-white { color: #ffffff; }
+:root.light .bg-primary-500\/15 .text-white { color: #ffffff; }
+
+/* Hero gradient: light / dark variants */
+.hero-gradient {
+  background:
+    radial-gradient(circle at top left, rgba(14,165,233,0.14), transparent 32%),
+    linear-gradient(180deg, rgba(15,23,42,0.96), rgba(15,23,42,0.82));
+}
+:root.light .hero-gradient {
+  background:
+    radial-gradient(circle at top left, rgba(14,165,233,0.10), transparent 32%),
+    linear-gradient(180deg, rgba(241,245,249,0.96), rgba(255,255,255,0.92));
+  border-color: rgba(245,158,11,0.15);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-text);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-800 border border-surface-700 rounded-lg p-4;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-primary-500/30 hover:shadow-lg hover:shadow-primary-500/5;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-500 hover:bg-primary-600 text-surface-900 font-semibold rounded-lg transition-colors duration-150;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-surface-700 hover:bg-surface-600 text-slate-300 rounded-lg border border-surface-600 transition-colors duration-150;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .badge-high {
+    @apply badge bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .badge-medium {
+    @apply badge bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+
+  .badge-low {
+    @apply badge bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .data-value {
+    @apply font-mono text-primary-400;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 bg-surface-900 border border-surface-600 rounded-lg text-slate-300 placeholder-slate-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500/30 transition-colors;
+  }
+
+  .select-field {
+    @apply input-field appearance-none cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .glow-amber {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+}
+
+/* highlight.js overrides */
+/* Dark mode: suppress hardcoded background */
+.hljs {
+  background: transparent;
+}
+
+/* Light mode: override dark token colors with GitHub light palette */
+:root.light .hljs {
+  background: transparent;
+  color: #24292e;
+}
+:root.light .hljs-comment,
+:root.light .hljs-quote {
+  color: #6a737d;
+}
+:root.light .hljs-keyword,
+:root.light .hljs-selector-tag,
+:root.light .hljs-subst {
+  color: #d73a49;
+}
+:root.light .hljs-number,
+:root.light .hljs-literal,
+:root.light .hljs-variable,
+:root.light .hljs-template-variable,
+:root.light .hljs-tag .hljs-attr {
+  color: #005cc5;
+}
+:root.light .hljs-string,
+:root.light .hljs-doctag {
+  color: #032f62;
+}
+:root.light .hljs-title,
+:root.light .hljs-section,
+:root.light .hljs-selector-id {
+  color: #6f42c1;
+}
+:root.light .hljs-type,
+:root.light .hljs-title.class_,
+:root.light .hljs-title.class_.inherited__,
+:root.light .hljs-title.function_ {
+  color: #6f42c1;
+}
+:root.light .hljs-tag,
+:root.light .hljs-name,
+:root.light .hljs-attribute {
+  color: #22863a;
+}
+:root.light .hljs-built_in,
+:root.light .hljs-builtin-name {
+  color: #005cc5;
+}
+:root.light .hljs-emphasis {
+  color: #24292e;
+  font-style: italic;
+}
+:root.light .hljs-strong {
+  color: #24292e;
+  font-weight: bold;
+}
+:root.light .hljs-addition {
+  color: #22863a;
+  background-color: #f0fff4;
+}
+:root.light .hljs-deletion {
+  color: #b31d28;
+  background-color: #ffeef0;
+}

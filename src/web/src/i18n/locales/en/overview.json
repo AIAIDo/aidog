@@ -1,0 +1,59 @@
+{
+  "header": {
+    "title": "Token Analysis Overview",
+    "refreshAnalysis": "Refresh Analysis",
+    "analyzing": "Analyzing...",
+    "loading": "Loading..."
+  },
+  "breakdown": {
+    "wasteControl": "Waste Control",
+    "cacheEfficiency": "Cache Efficiency",
+    "sessionHygiene": "Session Hygiene",
+    "sessionQuality": "Session Hygiene",
+    "modelFit": "Model Fit",
+    "toolEfficiency": "Tool Efficiency"
+  },
+  "stats": {
+    "sessions": "Sessions",
+    "tokenUsage": "Token Usage",
+    "avgScore": "Avg Score",
+    "estimatedWaste": "Est. Waste"
+  },
+  "chart": {
+    "tokenTrend": "Token Consumption Trend",
+    "last7Days": "Last 7 days",
+    "modelDistribution": "Model Distribution",
+    "tokens": "tokens"
+  },
+  "section": {
+    "currentSession": "Current Session",
+    "recentSessions": "Recent Sessions",
+    "topWastePatterns": "Top Waste Patterns"
+  },
+  "wastePatterns": {
+    "occurrences": "{{count}} hits",
+    "recoverable": "Potential recovery",
+    "viewDiagnosis": "Open diagnostics"
+  },
+  "live": {
+    "noActiveSessions": "No active sessions",
+    "live": "Live",
+    "turns": "Turns",
+    "tokens": "Tokens",
+    "rules": "Rules"
+  },
+  "grade": {
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "poor": "Poor",
+    "needsImprovement": "Needs Improvement"
+  },
+  "empty": {
+    "noData": "No data",
+    "noSessionRecords": "No session records",
+    "noSessions": "No session records",
+    "noWastePatterns": "No waste patterns",
+    "noScoreData": "No score data available"
+  }
+}

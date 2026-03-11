@@ -1,0 +1,75 @@
+{
+  "loading": "読み込み中...",
+  "header": {
+    "title": "Token 分析ルール",
+    "stats": "ルール {{total}} 件、有効 {{enabled}} 件、組み込み {{builtin}} 件、カスタム {{custom}} 件",
+    "addCustomRule": "カスタムルールを追加",
+    "editRule": "ルールを編集",
+    "addCustomTokenRule": "カスタム Token 分析ルールを追加"
+  },
+  "tokenRules": {
+    "title": "Token 分析ルール",
+    "ruleStats": "ルール {{total}} 件、有効 {{enabled}} 件、組み込み {{builtin}} 件、カスタム {{custom}} 件",
+    "addCustomRule": "カスタムルールを追加",
+    "editRule": "ルールを編集",
+    "addCustomTokenRule": "カスタム Token 分析ルールを追加"
+  },
+  "form": {
+    "name": "名前",
+    "severity": "重要度",
+    "description": "説明",
+    "field": "メトリックフィールド",
+    "metricField": "メトリックフィールド",
+    "aggregation": "集計方法",
+    "aggregationMax": "最大値",
+    "aggregationSum": "合計",
+    "aggregationAvg": "平均値",
+    "aggregationCount": "カウント",
+    "scope": "スコープ",
+    "operator": "演算子",
+    "threshold": "閾値",
+    "minEvents": "最小イベント数",
+    "cancel": "キャンセル",
+    "save": "保存"
+  },
+  "fieldOptions": {
+    "inputTokens": "Input Tokens",
+    "outputTokens": "Output Tokens",
+    "cacheRead": "Cache Read",
+    "cacheWrite": "Cache Write",
+    "contentLength": "Content Length"
+  },
+  "aggregationOptions": {
+    "max": "最大値",
+    "sum": "合計",
+    "avg": "平均値",
+    "count": "カウント"
+  },
+  "scopeOptions": {
+    "session": "セッション",
+    "event": "イベント"
+  },
+  "table": {
+    "status": "状態",
+    "id": "ID",
+    "name": "名前",
+    "severity": "重要度",
+    "type": "タイプ",
+    "description": "説明",
+    "actions": "操作"
+  },
+  "empty": {
+    "noRules": "ルールなし"
+  },
+  "saveFailed": "保存に失敗しました",
+  "confirmDelete": "ルール「{{name}}」を削除してもよろしいですか？",
+  "ruleCard": {
+    "hits": "ヒット",
+    "wasted": "無駄",
+    "evidenceItems": "{{count}} 件のエビデンス",
+    "turn": "ターン",
+    "tokens": "tokens",
+    "waste": "無駄",
+    "more": "+ {{count}} 件"
+  }
+}

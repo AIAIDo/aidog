@@ -1,0 +1,75 @@
+{
+  "loading": "Loading...",
+  "header": {
+    "title": "Token Analysis Rules",
+    "stats": "{{total}} rules total, {{enabled}} enabled, {{builtin}} built-in, {{custom}} custom",
+    "addCustomRule": "Add Custom Rule",
+    "editRule": "Edit Rule",
+    "addCustomTokenRule": "Add Custom Token Analysis Rule"
+  },
+  "tokenRules": {
+    "title": "Token Analysis Rules",
+    "ruleStats": "{{total}} rules total, {{enabled}} enabled, {{builtin}} built-in, {{custom}} custom",
+    "addCustomRule": "Add Custom Rule",
+    "editRule": "Edit Rule",
+    "addCustomTokenRule": "Add Custom Token Analysis Rule"
+  },
+  "form": {
+    "name": "Name",
+    "severity": "Severity",
+    "description": "Description",
+    "field": "Metric Field",
+    "metricField": "Metric Field",
+    "aggregation": "Aggregation",
+    "aggregationMax": "Max",
+    "aggregationSum": "Sum",
+    "aggregationAvg": "Average",
+    "aggregationCount": "Count",
+    "scope": "Scope",
+    "operator": "Operator",
+    "threshold": "Threshold",
+    "minEvents": "Min Events",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "fieldOptions": {
+    "inputTokens": "Input Tokens",
+    "outputTokens": "Output Tokens",
+    "cacheRead": "Cache Read",
+    "cacheWrite": "Cache Write",
+    "contentLength": "Content Length"
+  },
+  "aggregationOptions": {
+    "max": "Max",
+    "sum": "Sum",
+    "avg": "Average",
+    "count": "Count"
+  },
+  "scopeOptions": {
+    "session": "Session",
+    "event": "Event"
+  },
+  "table": {
+    "status": "Status",
+    "id": "ID",
+    "name": "Name",
+    "severity": "Severity",
+    "type": "Type",
+    "description": "Description",
+    "actions": "Actions"
+  },
+  "empty": {
+    "noRules": "No rules"
+  },
+  "saveFailed": "Save failed",
+  "confirmDelete": "Are you sure you want to delete rule \"{{name}}\"?",
+  "ruleCard": {
+    "hits": "hits",
+    "wasted": "wasted",
+    "evidenceItems": "{{count}} evidence items",
+    "turn": "Turn",
+    "tokens": "tokens",
+    "waste": "waste",
+    "more": "+ {{count}} more"
+  }
+}

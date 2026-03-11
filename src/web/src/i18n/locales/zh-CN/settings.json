@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "aiProvider": "AI 提供商",
+    "alerts": "告警",
+    "securityRules": "安全规则",
+    "analysis": "分析",
+    "storage": "存储"
+  },
+  "provider": {
+    "providers": "提供商",
+    "scanning": "扫描中...",
+    "providersReady": "{{count}} 个提供商就绪",
+    "provider": "提供商",
+    "providerDesc": "自动模式使用第一个可用提供商，也可手动选择",
+    "autoDetect": "自动检测",
+    "model": "模型",
+    "modelDesc": "用于优化分析的 AI 模型",
+    "available": "可用",
+    "notDetected": "未检测到",
+    "selected": "已选择",
+    "clickToConfigure": "点击配置",
+    "configuration": "配置",
+    "apiKey": "API Key",
+    "usingAutoDetectedKey": "(使用自动检测的 Key)",
+    "storedLocally": "仅存储在本地",
+    "storedLocallyOnly": "仅存储在本地",
+    "baseUrl": "Base URL",
+    "baseURL": "Base URL",
+    "customModel": "自定义模型",
+    "clearManualConfig": "清除手动配置",
+    "noProviders": "未检测到提供商。点击上方提供商进行手动配置，或设置环境变量。",
+    "noProvidersDetected": "未检测到提供商。点击上方提供商进行手动配置，或设置环境变量。",
+    "awsBedrock": "已检测到 AWS Bedrock 凭证（可供将来使用）",
+    "awsBedrockDetected": "已检测到 AWS Bedrock 凭证（可供将来使用）",
+    "local": "本地",
+    "manual": "手动",
+    "viaManualConfig": "手动配置",
+    "viaSource": "通过 {{source}}"
+  },
+  "alerts": {
+    "healthScoreThreshold": "健康评分阈值",
+    "healthScoreDesc": "当健康评分低于此值时发出告警",
+    "healthScoreThresholdDesc": "当健康评分低于此值时发出告警"
+  },
+  "security": {
+    "country": "国家 / 地区",
+    "countryRegion": "国家 / 地区",
+    "countryDesc": "选择国家以设置电话号码和身份证检测模式",
+    "countryRegionDesc": "选择国家以设置电话号码和身份证检测模式",
+    "phonePattern": "手机号码模式",
+    "phoneNumberPattern": "手机号码模式",
+    "phonePatternDesc": "手机号码检测的正则模式 (规则 S1)",
+    "phoneNumberPatternDesc": "手机号码检测的正则模式 (规则 S1)",
+    "idCardPattern": "身份证号模式",
+    "idCardPatternDesc": "身份证/SSN 检测的正则模式 (规则 S2)",
+    "customized": "已自定义",
+    "restoreCountryDefaults": "恢复国家默认设置"
+  },
+  "analysis": {
+    "interval": "分析间隔",
+    "analysisInterval": "分析间隔",
+    "intervalDesc": "自动分析的执行频率",
+    "analysisIntervalDesc": "自动分析的执行频率",
+    "autoAnalyze": "自动分析",
+    "autoAnalyzeDesc": "新会话完成时自动执行分析",
+    "maxSessionAge": "会话最大保留天数",
+    "maxSessionAgeDesc": "清理前保留会话数据的天数"
+  },
+  "storage": {
+    "dataPath": "数据路径",
+    "dataPathDesc": "aidog 存储分析数据的目录"
+  },
+  "saveSettings": "保存设置",
+  "intervalOptions": {
+    "1min": "1 分钟",
+    "5min": "5 分钟",
+    "10min": "10 分钟",
+    "30min": "30 分钟",
+    "1hour": "1 小时"
+  },
+  "retentionOptions": {
+    "7days": "7 天",
+    "14days": "14 天",
+    "30days": "30 天",
+    "60days": "60 天",
+    "90days": "90 天"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "totalPlugins": "插件总数",
+  "available": "可用",
+  "enabled": "已启用",
+  "disabled": "已禁用",
+  "unavailable": "不可用",
+  "loadingPlugins": "加载插件中...",
+  "by": "作者: {{author}}",
+  "homepage": "主页 →"
+}

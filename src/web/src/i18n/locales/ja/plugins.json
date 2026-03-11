@@ -1,0 +1,10 @@
+{
+  "totalPlugins": "プラグイン総数",
+  "available": "利用可能",
+  "enabled": "有効",
+  "disabled": "無効",
+  "unavailable": "利用不可",
+  "loadingPlugins": "プラグインを読み込み中...",
+  "by": "作者: {{author}}",
+  "homepage": "ホームページ →"
+}

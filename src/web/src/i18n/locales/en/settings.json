@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "aiProvider": "AI Provider",
+    "alerts": "Alerts",
+    "securityRules": "Security Rules",
+    "analysis": "Analysis",
+    "storage": "Storage"
+  },
+  "provider": {
+    "providers": "Providers",
+    "scanning": "Scanning...",
+    "providersReady": "{{count}} provider(s) ready",
+    "provider": "Provider",
+    "providerDesc": "Auto uses the first available provider, or pick one explicitly",
+    "autoDetect": "Auto-detect",
+    "model": "Model",
+    "modelDesc": "AI model for optimization analysis",
+    "available": "Available",
+    "notDetected": "Not detected",
+    "selected": "Selected",
+    "clickToConfigure": "Click to configure",
+    "configuration": "Configuration",
+    "apiKey": "API Key",
+    "usingAutoDetectedKey": "(using auto-detected key)",
+    "storedLocally": "Stored locally only",
+    "storedLocallyOnly": "Stored locally only",
+    "baseUrl": "Base URL",
+    "baseURL": "Base URL",
+    "customModel": "Custom Model",
+    "clearManualConfig": "Clear manual config",
+    "noProviders": "No providers detected. Click any provider above to configure manually, or set environment variables.",
+    "noProvidersDetected": "No providers detected. Click any provider above to configure manually, or set environment variables.",
+    "awsBedrock": "AWS Bedrock credentials detected (available for future use)",
+    "awsBedrockDetected": "AWS Bedrock credentials detected (available for future use)",
+    "local": "LOCAL",
+    "manual": "MANUAL",
+    "viaManualConfig": "manual config",
+    "viaSource": "via {{source}}"
+  },
+  "alerts": {
+    "healthScoreThreshold": "Health Score Threshold",
+    "healthScoreDesc": "Alert when health score drops below this value",
+    "healthScoreThresholdDesc": "Alert when health score drops below this value"
+  },
+  "security": {
+    "country": "Country / Region",
+    "countryRegion": "Country / Region",
+    "countryDesc": "Select country for phone and ID card detection patterns",
+    "countryRegionDesc": "Select country for phone and ID card detection patterns",
+    "phonePattern": "Phone Number Pattern",
+    "phoneNumberPattern": "Phone Number Pattern",
+    "phonePatternDesc": "Regex pattern for phone number detection (rule S1)",
+    "phoneNumberPatternDesc": "Regex pattern for phone number detection (rule S1)",
+    "idCardPattern": "ID Card Pattern",
+    "idCardPatternDesc": "Regex pattern for ID/SSN detection (rule S2)",
+    "customized": "customized",
+    "restoreCountryDefaults": "Restore country defaults"
+  },
+  "analysis": {
+    "interval": "Analysis Interval",
+    "analysisInterval": "Analysis Interval",
+    "intervalDesc": "How often to run automatic analysis",
+    "analysisIntervalDesc": "How often to run automatic analysis",
+    "autoAnalyze": "Auto-Analyze",
+    "autoAnalyzeDesc": "Automatically analyze new sessions as they complete",
+    "maxSessionAge": "Max Session Age",
+    "maxSessionAgeDesc": "Days to retain session data before cleanup"
+  },
+  "storage": {
+    "dataPath": "Data Path",
+    "dataPathDesc": "Directory where aidog stores analysis data"
+  },
+  "saveSettings": "Save Settings",
+  "intervalOptions": {
+    "1min": "1 minute",
+    "5min": "5 minutes",
+    "10min": "10 minutes",
+    "30min": "30 minutes",
+    "1hour": "1 hour"
+  },
+  "retentionOptions": {
+    "7days": "7 days",
+    "14days": "14 days",
+    "30days": "30 days",
+    "60days": "60 days",
+    "90days": "90 days"
+  }
+}

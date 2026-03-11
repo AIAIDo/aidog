@@ -1,0 +1,59 @@
+{
+  "header": {
+    "title": "Token 分析概要",
+    "refreshAnalysis": "分析を更新",
+    "analyzing": "分析中...",
+    "loading": "読み込み中..."
+  },
+  "breakdown": {
+    "wasteControl": "無駄制御",
+    "cacheEfficiency": "Cache 効率",
+    "sessionHygiene": "セッション品質",
+    "sessionQuality": "セッション品質",
+    "modelFit": "モデル適合",
+    "toolEfficiency": "ツール効率"
+  },
+  "stats": {
+    "sessions": "セッション数",
+    "tokenUsage": "Token 消費",
+    "avgScore": "平均スコア",
+    "estimatedWaste": "推定無駄"
+  },
+  "chart": {
+    "tokenTrend": "Token 消費トレンド",
+    "last7Days": "直近7日間",
+    "modelDistribution": "モデル分布",
+    "tokens": "tokens"
+  },
+  "section": {
+    "currentSession": "現在のセッション",
+    "recentSessions": "最近のセッション",
+    "topWastePatterns": "主な無駄パターン"
+  },
+  "wastePatterns": {
+    "occurrences": "{{count}} 件ヒット",
+    "recoverable": "回収見込み",
+    "viewDiagnosis": "診断を開く"
+  },
+  "live": {
+    "noActiveSessions": "アクティブなセッションなし",
+    "live": "ライブ",
+    "turns": "ターン",
+    "tokens": "Token",
+    "rules": "ルール"
+  },
+  "grade": {
+    "excellent": "優秀",
+    "good": "良好",
+    "fair": "普通",
+    "poor": "不良",
+    "needsImprovement": "改善が必要"
+  },
+  "empty": {
+    "noData": "データなし",
+    "noSessionRecords": "セッション記録なし",
+    "noSessions": "セッション記録なし",
+    "noWastePatterns": "無駄パターンなし",
+    "noScoreData": "スコアデータなし"
+  }
+}
