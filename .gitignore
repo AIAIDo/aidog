@@ -33,6 +33,12 @@ test-results/
 *.log
 npm-debug.log*
 
+# Plan documents
+*_plan.md
+*-plan.md
+docs/plans/
+docs/superpowers/specs/
+
 # AI tools
 .claude/
 .superpowers/
