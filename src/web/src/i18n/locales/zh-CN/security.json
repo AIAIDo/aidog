@@ -95,7 +95,7 @@
     "matchTypeRegex": "正则表达式",
     "matchTypeLiteral": "固定字符串",
     "regexPlaceholder": "例如:\nsk-[a-zA-Z0-9]{20,}\nmy_secret_\\w+",
-    "literalPlaceholder": "例如:\nAKIAIOSFODNN7EXAMPLE\npassword=123456",
+    "literalPlaceholder": "例如:\ndemo_access_key_value\npassword=123456",
     "cancel": "取消",
     "save": "保存",
     "form": {
