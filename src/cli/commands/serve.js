@@ -161,7 +161,10 @@ async function runServe(options) {
         discoveryCache = null;
         discoveryPromise = runProviderDiscovery()
           .then(result => { discoveryCache = result; })
-          .catch(() => {});
+          .catch(err => {
+            console.log(chalk.gray(`  Provider discovery refresh failed (${err.message})`));
+            discoveryCache = { providers: ALL_PROVIDERS, recommended: null, savedConfig: {}, manualConfigs: {}, hasAwsBedrock: false, hasGcp: false };
+          });
       }
       // If startup scan is still running, wait for it
       if (!discoveryCache && discoveryPromise) {
