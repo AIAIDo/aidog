@@ -5,6 +5,56 @@ describe('Local binding detection', () => {
   describe('parseLsofOutput (via scanLocalBindings)', () => {
     let scanLocalBindings, execSyncMock;
 
+    /**
+     * Convert a list of port bindings into lsof-style output.
+     * Each entry: { cmd, pid, addr, port }
+     * addr = '*' means 0.0.0.0 (all interfaces), '127.0.0.1' means local-only.
+     */
+    function makeLsofOutput(bindings) {
+      const header = 'COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME\n';
+      const lines = bindings.map(({ cmd, pid, addr, port }) =>
+        `${cmd.padEnd(8)} ${pid} user   22u  IPv4 0x1234  0t0  TCP ${addr}:${port} (LISTEN)`
+      );
+      return header + lines.join('\n') + '\n';
+    }
+
+    /**
+     * Convert the same bindings into ss -tlnp-style output (Linux).
+     */
+    function makeSsOutput(bindings) {
+      const header = 'Netid State Recv-Q Send-Q Local Address:Port Peer Address:Port Process\n';
+      const lines = bindings.map(({ cmd, pid, addr, port }) => {
+        const localAddr = addr === '*' ? '0.0.0.0' : addr;
+        return `LISTEN 0 128 ${localAddr}:${port} 0.0.0.0:* users:(("${cmd}",pid=${pid},fd=22))`;
+      });
+      return header + lines.join('\n') + '\n';
+    }
+
+    /**
+     * Convert the same bindings into netstat -tlnp-style output (Linux fallback).
+     */
+    function makeNetstatOutput(bindings) {
+      const header = 'Proto Recv-Q Send-Q Local Address Foreign Address State PID/Program\n';
+      const lines = bindings.map(({ cmd, pid, addr, port }) => {
+        const localAddr = addr === '*' ? '0.0.0.0' : addr;
+        return `tcp 0 0 ${localAddr}:${port} 0.0.0.0:* LISTEN ${pid}/${cmd}`;
+      });
+      return header + lines.join('\n') + '\n';
+    }
+
+    /**
+     * Create a cross-platform execSync mock from a list of port bindings.
+     * Returns the right output format based on which command is called.
+     */
+    function makeExecMock(bindings) {
+      return vi.fn().mockImplementation((cmd) => {
+        if (cmd.startsWith('lsof')) return makeLsofOutput(bindings);
+        if (cmd.startsWith('ss')) return makeSsOutput(bindings);
+        if (cmd.startsWith('netstat')) return makeNetstatOutput(bindings);
+        return '';
+      });
+    }
+
     beforeEach(async () => {
       vi.resetModules();
       execSyncMock = vi.fn();
@@ -20,13 +70,11 @@ describe('Local binding detection', () => {
     });
 
     it('should detect 0.0.0.0 bindings from lsof output', async () => {
-      execSyncMock.mockReturnValue(
-        `COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-node    12345 user   22u  IPv4 0x1234  0t0  TCP *:3000 (LISTEN)
-redis    5678 user   6u  IPv4 0x5678  0t0  TCP *:6379 (LISTEN)
-postgres 9999 user   5u  IPv4 0x9999  0t0  TCP 127.0.0.1:5432 (LISTEN)
-`
-      );
+      execSyncMock.mockImplementation(makeExecMock([
+        { cmd: 'node', pid: 12345, addr: '*', port: 3000 },
+        { cmd: 'redis', pid: 5678, addr: '*', port: 6379 },
+        { cmd: 'postgres', pid: 9999, addr: '127.0.0.1', port: 5432 },
+      ]));
 
       const findings = await scanLocalBindings();
       const ports = findings.map(f => f.port);
@@ -37,11 +85,9 @@ postgres 9999 user   5u  IPv4 0x9999  0t0  TCP 127.0.0.1:5432 (LISTEN)
     });
 
     it('should return empty for no 0.0.0.0 bindings', async () => {
-      execSyncMock.mockReturnValue(
-        `COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-node    12345 user   22u  IPv4 0x1234  0t0  TCP 127.0.0.1:3000 (LISTEN)
-`
-      );
+      execSyncMock.mockImplementation(makeExecMock([
+        { cmd: 'node', pid: 12345, addr: '127.0.0.1', port: 3000 },
+      ]));
 
       const findings = await scanLocalBindings();
       expect(findings).toHaveLength(0);
@@ -60,11 +106,9 @@ node    12345 user   22u  IPv4 0x1234  0t0  TCP 127.0.0.1:3000 (LISTEN)
     });
 
     it('should include port, service, pid, process in findings', async () => {
-      execSyncMock.mockReturnValue(
-        `COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-node    12345 user   22u  IPv4 0x1234  0t0  TCP *:3000 (LISTEN)
-`
-      );
+      execSyncMock.mockImplementation(makeExecMock([
+        { cmd: 'node', pid: 12345, addr: '*', port: 3000 },
+      ]));
 
       const findings = await scanLocalBindings();
       expect(findings).toHaveLength(1);
@@ -80,12 +124,10 @@ node    12345 user   22u  IPv4 0x1234  0t0  TCP *:3000 (LISTEN)
     });
 
     it('should only report ports in the scan list', async () => {
-      execSyncMock.mockReturnValue(
-        `COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-node    12345 user   22u  IPv4 0x1234  0t0  TCP *:9999 (LISTEN)
-node    12345 user   23u  IPv4 0x1235  0t0  TCP *:3000 (LISTEN)
-`
-      );
+      execSyncMock.mockImplementation(makeExecMock([
+        { cmd: 'node', pid: 12345, addr: '*', port: 9999 },
+        { cmd: 'node', pid: 12345, addr: '*', port: 3000 },
+      ]));
 
       const findings = await scanLocalBindings();
       // Port 9999 is not in DEFAULT_PORTS, should not appear
@@ -93,11 +135,9 @@ node    12345 user   23u  IPv4 0x1235  0t0  TCP *:3000 (LISTEN)
     });
 
     it('should detect 0.0.0.0:port format', async () => {
-      execSyncMock.mockReturnValue(
-        `COMMAND   PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
-mysql    1111 user   10u  IPv4 0x1111  0t0  TCP 0.0.0.0:3306 (LISTEN)
-`
-      );
+      execSyncMock.mockImplementation(makeExecMock([
+        { cmd: 'mysql', pid: 1111, addr: '0.0.0.0', port: 3306 },
+      ]));
 
       const findings = await scanLocalBindings();
       expect(findings).toHaveLength(1);
