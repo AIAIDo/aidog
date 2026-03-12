@@ -84,6 +84,7 @@ export function useSSE(url) {
   const [connected, setConnected] = useState(false);
   const [error, setError] = useState(null);
   const eventSourceRef = useRef(null);
+  const reconnectTimerRef = useRef(null);
 
   useEffect(() => {
     if (!url) return;
@@ -111,13 +112,17 @@ export function useSSE(url) {
         setError('SSE connection lost');
         es.close();
         // Reconnect after 3 seconds
-        setTimeout(connect, 3000);
+        reconnectTimerRef.current = setTimeout(connect, 3000);
       };
     };
 
     connect();
 
     return () => {
+      if (reconnectTimerRef.current) {
+        clearTimeout(reconnectTimerRef.current);
+        reconnectTimerRef.current = null;
+      }
       if (eventSourceRef.current) {
         eventSourceRef.current.close();
         eventSourceRef.current = null;

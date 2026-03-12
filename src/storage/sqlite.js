@@ -1364,26 +1364,31 @@ export class SQLiteStorage {
    */
   getSessionTitles(sessionIds) {
     if (!sessionIds || sessionIds.length === 0) return {};
-    const placeholders = sessionIds.map(() => '?').join(',');
-    const rows = this.db.prepare(`
-      SELECT session_id, COALESCE(
-        (SELECT SUBSTR(content, 1, 500) FROM token_events t2
-         WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL AND t2.role = 'user'
-         ORDER BY t2.timestamp ASC LIMIT 1),
-        (SELECT SUBSTR(content, 1, 500) FROM token_events t2
-         WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL AND t2.content LIKE '%"type":"text"%'
-         ORDER BY t2.timestamp ASC LIMIT 1),
-        (SELECT SUBSTR(content, 1, 500) FROM token_events t2
-         WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL
-         ORDER BY t2.timestamp ASC LIMIT 1)
-      ) AS first_content
-      FROM token_events
-      WHERE session_id IN (${placeholders})
-      GROUP BY session_id
-    `).all(...sessionIds);
+    // SQLite supports at most 999 bind parameters; chunk to avoid exceeding the limit
+    const CHUNK_SIZE = 999;
     const result = {};
-    for (const r of rows) {
-      result[r.session_id] = extractSessionTitle(r.first_content);
+    for (let i = 0; i < sessionIds.length; i += CHUNK_SIZE) {
+      const chunk = sessionIds.slice(i, i + CHUNK_SIZE);
+      const placeholders = chunk.map(() => '?').join(',');
+      const rows = this.db.prepare(`
+        SELECT session_id, COALESCE(
+          (SELECT SUBSTR(content, 1, 500) FROM token_events t2
+           WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL AND t2.role = 'user'
+           ORDER BY t2.timestamp ASC LIMIT 1),
+          (SELECT SUBSTR(content, 1, 500) FROM token_events t2
+           WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL AND t2.content LIKE '%"type":"text"%'
+           ORDER BY t2.timestamp ASC LIMIT 1),
+          (SELECT SUBSTR(content, 1, 500) FROM token_events t2
+           WHERE t2.session_id = token_events.session_id AND t2.content IS NOT NULL
+           ORDER BY t2.timestamp ASC LIMIT 1)
+        ) AS first_content
+        FROM token_events
+        WHERE session_id IN (${placeholders})
+        GROUP BY session_id
+      `).all(...chunk);
+      for (const r of rows) {
+        result[r.session_id] = extractSessionTitle(r.first_content);
+      }
     }
     return result;
   }

@@ -180,6 +180,9 @@ export class ClaudeCodePlugin {
 
     watcher.on('change', handleChange);
     watcher.on('add', handleChange);
+    watcher.on('unlink', (filePath) => {
+      fileSizes.delete(filePath);
+    });
 
     // Return unsubscribe function
     return () => {
